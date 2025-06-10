@@ -385,6 +385,82 @@
             color: var(--text-secondary);
         }
 
+        /* Technology Stack Section */
+        .tech-stack-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .tech-category {
+            flex: 1;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-item {
+            text-align: center;
+        }
+
+        .tech-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            height: 20px;
+            background: var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
+        }
+
+        /* Process Timeline Section */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .timeline-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+        }
+
         /* Portfolio Section */
         .portfolio-grid {
             display: grid;
@@ -916,9 +992,449 @@
                 font-size: 1.1rem;
             }
         }
+
+        /* Chat Widget Styles */
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 1000;
+        }
+
+        .chat-button {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .chat-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .chat-container {
+            position: fixed;
+            bottom: 5rem;
+            right: 2rem;
+            width: 350px;
+            height: 500px;
+            background: var(--secondary-bg);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .chat-header {
+            padding: 1rem;
+            background: var(--accent-gradient);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 0.8rem 1rem;
+            border-radius: 15px;
+            animation: messageSlide 0.3s ease;
+        }
+
+        .message.system {
+            background: var(--accent-bg);
+            align-self: flex-start;
+        }
+
+        .message.user {
+            background: var(--accent-gradient);
+            color: white;
+            align-self: flex-end;
+        }
+
+        .chat-input {
+            padding: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            background: var(--card-bg);
+            color: var(--text-primary);
+        }
+
+        .chat-input button {
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes messageSlide {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Showcase Styles */
+        .showcase-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .showcase-item {
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .showcase-header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .showcase-controls {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .control-btn {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--border-color);
+            background: var(--accent-bg);
+            color: var(--text-primary);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn.active {
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        .showcase-content {
+            padding: 2rem;
+        }
+
+        .comparison-view {
+            position: relative;
+            height: 400px;
+        }
+
+        .before-view,
+        .after-view {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .before-view.active,
+        .after-view.active {
+            opacity: 1;
+        }
+
+        .comparison-view img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .metrics {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Testimonials Carousel Styles */
+        .testimonials-carousel {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 2rem;
+        }
+
+        .testimonial-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .client-logo {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .client-info {
+            margin-bottom: 2rem;
+        }
+
+        .client-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .client-title {
+            color: var(--text-secondary);
+        }
+
+        .success-metrics {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+        /* Pricing Calculator Styles */
+        .pricing-calculator {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-category h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--accent-bg);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        .feature-item input[type="checkbox"] {
+            margin-right: 1rem;
+            width: 20px;
+            height: 20px;
+        }
+
+        .feature-name {
+            flex: 1;
+        }
+
+        .feature-price {
+            font-weight: 600;
+        }
+
+        .price-summary {
+            text-align: center;
+            padding: 2rem;
+            background: var(--accent-bg);
+            border-radius: 15px;
+        }
+
+        .total-price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .get-quote-btn {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .get-quote-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .site-wrapper {
+            flex: 1 0 auto;
+        }
+        footer {
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body>
+    <div class="site-wrapper">
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-content">
@@ -1007,19 +1523,97 @@
         </div>
     </section>
 
+    <!-- Technology Stack Section -->
+    <section id="tech-stack" class="fade-in">
+        <h2 class="section-title">Our Technology Stack</h2>
+        <div class="tech-stack-container">
+            <div class="tech-category">
+                <h3>Frontend</h3>
+                <div class="tech-grid">
+                    <div class="tech-item" data-skill="95">
+                        <div class="tech-icon">🌐</div>
+                        <h4>HTML5</h4>
+                        <div class="skill-bar">
+                            <div class="skill-level"></div>
+                        </div>
+                    </div>
+                    <div class="tech-item" data-skill="90">
+                        <div class="tech-icon">🎨</div>
+                        <h4>CSS3</h4>
+                        <div class="skill-bar">
+                            <div class="skill-level"></div>
+                        </div>
+                    </div>
+                    <div class="tech-item" data-skill="85">
+                        <div class="tech-icon">⚡</div>
+                        <h4>JavaScript</h4>
+                        <div class="skill-bar">
+                            <div class="skill-level"></div>
+                        </div>
+                    </div>
+                    <div class="tech-item" data-skill="80">
+                        <div class="tech-icon">🔄</div>
+                        <h4>React</h4>
+                        <div class="skill-bar">
+                            <div class="skill-level"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline Section -->
+    <section id="process" class="fade-in">
+        <h2 class="section-title">Our Process</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">🎯</div>
+                <div class="timeline-content">
+                    <h3>Discovery</h3>
+                    <p>We begin with a deep dive into your business needs, goals, and target audience to create a tailored solution.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">✏️</div>
+                <div class="timeline-content">
+                    <h3>Design</h3>
+                    <p>Our creative team crafts stunning, user-friendly designs that align with your brand identity.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">💻</div>
+                <div class="timeline-content">
+                    <h3>Development</h3>
+                    <p>We build your website using cutting-edge technologies, ensuring optimal performance and responsiveness.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">🔍</div>
+                <div class="timeline-content">
+                    <h3>Testing</h3>
+                    <p>Rigorous testing across all devices and browsers ensures a flawless user experience.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">🚀</div>
+                <div class="timeline-content">
+                    <h3>Launch</h3>
+                    <p>We deploy your website with precision and provide comprehensive training and support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="portfolio" class="fade-in">
         <h2 class="section-title">Featured Projects</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item" data-project="webapp">
-                <div class="portfolio-preview project-blur-title">
-                    <span class="blurred-title">Kenjii Flashcard App</span>
-                </div>
+            <div class="portfolio-item placeholder">
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
-                        <h3>Kenjii Flashcard App</h3>
-                        <p>HTML, CSS, JavaScript</p>
-                        <span class="view-project">View Project →</span>
+                        <h3>Coming Soon</h3>
+                        <p>More projects on the way</p>
                     </div>
                 </div>
             </div>
@@ -1066,40 +1660,97 @@
         </div>
     </div>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="fade-in">
-        <h2 class="section-title">What Clients Say</h2>
-        <div class="testimonials-container">
-            <div class="testimonial">
-                <p class="testimonial-text">"Oraxis transformed our digital presence completely. Their attention to detail and creative vision exceeded our expectations. Our conversion rates increased by 150% after the redesign."</p>
-                <div class="testimonial-author">— Ben Dover, CEO of Ragebait</div>
+    <!-- Project Showcase -->
+    <section id="showcase" class="fade-in">
+        <h2 class="section-title">Project Showcase</h2>
+        <div class="showcase-container">
+            <div class="showcase-item">
+                <div class="showcase-header">
+                    <h3>Before & After</h3>
+                    <div class="showcase-controls">
+                        <button class="control-btn active" data-view="before">Before</button>
+                        <button class="control-btn" data-view="after">After</button>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <div class="comparison-view">
+                        <div class="before-view active">
+                            <img src="https://placehold.co/800x400?text=Before" alt="Before">
+                            <div class="metrics">
+                                <div class="metric"><span class="metric-value">2.5s</span><span class="metric-label">Load Time</span></div>
+                                <div class="metric"><span class="metric-value">65</span><span class="metric-label">Performance</span></div>
+                                <div class="metric"><span class="metric-value">3/10</span><span class="metric-label">Mobile Score</span></div>
+                            </div>
+                        </div>
+                        <div class="after-view">
+                            <img src="https://placehold.co/800x400?text=After" alt="After">
+                            <div class="metrics">
+                                <div class="metric"><span class="metric-value">0.8s</span><span class="metric-label">Load Time</span></div>
+                                <div class="metric"><span class="metric-value">95</span><span class="metric-label">Performance</span></div>
+                                <div class="metric"><span class="metric-value">10/10</span><span class="metric-label">Mobile Score</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-        <h2 class="section-title">Get In Touch</h2>
-        <form class="contact-form" action="https://formspree.io/f/xjkrkzll" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="fade-in">
+        <h2 class="section-title">Client Success Stories</h2>
+        <div class="testimonials-carousel">
+            <div class="testimonial-track">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="client-logo">🏢</div>
+                        <p class="testimonial-text">"Oraxis transformed our digital presence completely. Their attention to detail and creative vision exceeded our expectations. Our conversion rates increased by 150% after the redesign."</p>
+                        <div class="client-info">
+                            <div class="client-name">Ben Dover</div>
+                            <div class="client-title">CEO of Ragebait</div>
+                        </div>
+                        <div class="success-metrics">
+                            <div class="metric">
+                                <span class="metric-value">150%</span>
+                                <span class="metric-label">Conversion Increase</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">3x</span>
+                                <span class="metric-label">Traffic Growth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="client-logo">💼</div>
+                        <p class="testimonial-text">"Working with Oraxis was a game-changer for our business. Their expertise in web development and digital strategy helped us reach new heights in our online presence."</p>
+                        <div class="client-info">
+                            <div class="client-name">Sarah Smith</div>
+                            <div class="client-title">Marketing Director, TechCorp</div>
+                        </div>
+                        <div class="success-metrics">
+                            <div class="metric">
+                                <span class="metric-value">200%</span>
+                                <span class="metric-label">ROI</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4x</span>
+                                <span class="metric-label">Lead Generation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="_replyto" required>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev">←</button>
+                <div class="carousel-dots"></div>
+                <button class="carousel-btn next">→</button>
             </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <input type="hidden" name="_subject" value="New message from Oraxis website">
-            <input type="hidden" name="_next" value="https://Oraxis-website.com#contact">
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (move to very bottom) -->
     <footer>
         <div class="social-icons">
             <a href="#" aria-label="GitHub">📧</a>
@@ -1112,6 +1763,29 @@
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop">↑</button>
 
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-button" id="chatButton">
+            <span class="chat-icon">💬</span>
+            <span class="chat-text">Chat with us</span>
+        </button>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h3>Chat with Oraxis</h3>
+                <button class="close-chat" id="closeChat">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message system">
+                    <p>👋 Hi! How can we help you today?</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="sendMessage">Send</button>
+            </div>
+        </div>
+    </div>
+    </div>
     <script>
         // Theme Toggle (using in-memory storage)
         const themeToggle = document.getElementById('themeToggle');
@@ -1188,20 +1862,23 @@
         });
 
         // Form submission (Updated for Formspree)
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            // Let the form submit naturally to Formspree
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Re-enable button after a short delay (form will redirect)
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
-        });
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // Let the form submit naturally to Formspree
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Re-enable button after a short delay (form will redirect)
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+        }
 
         // Loading screen
         window.addEventListener('load', () => {
@@ -1408,6 +2085,79 @@
             serviceObserver.observe(card);
         });
 
+        // Animate skill bars
+        const techItems = document.querySelectorAll('.tech-item');
+        const techObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillLevel = entry.target.querySelector('.skill-level');
+                    const skillValue = entry.target.getAttribute('data-skill');
+                    skillLevel.style.width = `${skillValue}%`;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        techItems.forEach(item => {
+            techObserver.observe(item);
+            
+            // Add hover effect
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Animate timeline items
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }, index * 200);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        timelineItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-50px)';
+            item.style.transition = 'all 0.6s ease';
+            timelineObserver.observe(item);
+        });
+
+        // Add tech stack hover effects
+        const techIcons = document.querySelectorAll('.tech-icon');
+        techIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.style.transform = 'scale(1.2) rotate(5deg)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            
+            icon.addEventListener('mouseleave', () => {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Add timeline hover effects
+        timelineItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const icon = item.querySelector('.timeline-icon');
+                icon.style.transform = 'scale(1.2)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                const icon = item.querySelector('.timeline-icon');
+                icon.style.transform = 'scale(1)';
+            });
+        });
+
         // Add mobile menu functionality
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
@@ -1513,6 +2263,156 @@
         });
 
         console.log('🌟 Oraxis loaded successfully! Try the Konami code for a surprise: ↑↑↓↓←→←→BA');
+
+        // Chat Widget Functionality
+        const chatButton = document.getElementById('chatButton');
+        const chatContainer = document.getElementById('chatContainer');
+        const closeChat = document.getElementById('closeChat');
+        const messageInput = document.getElementById('messageInput');
+        const sendMessage = document.getElementById('sendMessage');
+        const chatMessages = document.getElementById('chatMessages');
+
+        if (chatButton && chatContainer && closeChat && messageInput && sendMessage && chatMessages) {
+            chatButton.addEventListener('click', () => {
+                chatContainer.style.display = 'flex';
+                chatButton.style.display = 'none';
+            });
+
+            closeChat.addEventListener('click', () => {
+                chatContainer.style.display = 'none';
+                chatButton.style.display = 'flex';
+            });
+
+            function addMessage(message, type) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${type}`;
+                messageDiv.innerHTML = `<p>${message}</p>`;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            sendMessage.addEventListener('click', () => {
+                const message = messageInput.value.trim();
+                if (message) {
+                    addMessage(message, 'user');
+                    messageInput.value = '';
+                    setTimeout(() => {
+                        addMessage("Thanks for your message! We'll get back to you soon.", 'system');
+                    }, 1000);
+                }
+            });
+
+            messageInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage.click();
+                }
+            });
+        }
+
+        // Pricing Calculator Functionality
+        const featureCheckboxes = document.querySelectorAll('input[name="feature"]');
+        const totalPriceElement = document.getElementById('totalPrice');
+        let totalPrice = 0;
+
+        featureCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const price = parseInt(checkbox.dataset.price) || 0;
+                if (checkbox.checked) {
+                    totalPrice += price;
+                } else {
+                    totalPrice -= price;
+                }
+                totalPriceElement.textContent = `$${totalPrice}`;
+            });
+        });
+
+        // Add animation to feature items
+        featureCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const featureItem = checkbox.closest('.feature-item');
+                if (checkbox.checked) {
+                    featureItem.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        featureItem.style.transform = 'translateX(5px)';
+                    }, 200);
+                } else {
+                    featureItem.style.transform = 'translateX(0)';
+                }
+            });
+        });
+
+        // Showcase Functionality
+        const controlBtns = document.querySelectorAll('.control-btn');
+        const beforeView = document.querySelector('.before-view');
+        const afterView = document.querySelector('.after-view');
+
+        controlBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const view = btn.dataset.view;
+                controlBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                if (view === 'before') {
+                    beforeView.classList.add('active');
+                    afterView.classList.remove('active');
+                } else {
+                    beforeView.classList.remove('active');
+                    afterView.classList.add('active');
+                }
+            });
+        });
+
+        // Initialize first view
+        beforeView.classList.add('active');
+
+        // Testimonials Carousel Functionality
+        const track = document.querySelector('.testimonial-track');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        
+        let currentSlide = 0;
+        const slideCount = slides.length;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateDots();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            goToSlide(currentSlide);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slideCount;
+            goToSlide(currentSlide);
+        });
+
+        // Auto-advance slides
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slideCount;
+            goToSlide(currentSlide);
+        }, 5000);
     </script>
 </body>
 </html>
